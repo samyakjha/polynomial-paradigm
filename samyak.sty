@@ -1,0 +1,144 @@
+\RequirePackage{
+    amsmath, 
+    amsthm, 
+    amssymb, 
+    amsfonts,
+    xcolor, 
+    geometry, 
+    tikz, 
+    hyperref, 
+    mathrsfs,
+    enumitem,
+    fancyhdr,
+    lipsum,
+    nicefrac,
+    wasysym,
+    mathtools,
+    xspace,
+    anyfontsize,
+    todonotes,
+    fancyhdr,
+    lastpage,
+    stmaryrd,
+    commath,
+    float,     % because vanilla LaTeX loses its mind trying to place my floats
+    soul,
+    babel, 
+    physics, 
+    caption, 
+    subcaption
+}
+\RequirePackage{theoremref} % For referencing theorems
+\RequirePackage[center]{titlesec}
+
+% Input and Fonts
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{csquotes}
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathpazo}
+\RequirePackage{bm}
+\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
+\SetSymbolFont{wasy}{bold}{U}{wasy}{m}{n}
+% \RequirePackage{euler}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\S\thesection}{1em}{}[]
+\titleformat{\subsection}{\normalfont\Large\bfseries}{\S\thesubsection}{1em}{}[]
+\titleformat{\subsubsection}{\normalfont\Large\bfseries}{\S\thesubsubsection}{1em}{}[]
+
+\hypersetup {
+    colorlinks=true, % because why not?
+}
+
+\geometry{
+    margin=1in, % uniformity 
+}
+
+\newtheoremstyle{thmstyle}%               % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {\itshape}%                             % Body font
+  {}%                                     % Indent amount
+  {\bfseries}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%                                     % Theorem head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{defstyle}%               % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {}%                                     % Body font
+  {}%                                     % Indent amount
+  {\bfseries}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%                 
+
+
+\theoremstyle{thmstyle}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}{Remark}[section]
+
+\theoremstyle{defstyle}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+
+
+
+
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\emptyset}{\varnothing}
+% \renewcommand{\footrulewidth}{\headrulewidth}
+\setlength{\headheight}{15pt}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\frakM}{\mathfrak{M}}
+
+
+% Miscellaneous
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\Ewb}[2][]{\mathsf{E}_{#1} #2 }
+\newcommand{\E}[2][]{\mathsf{E}_{#1} \left[#2\right] }
+\newcommand{\vo}{\bm{v}_0}
+\newcommand{\bW}{\bm{W}}
+\newcommand{\vsi}{\bm{\sigma}}
+\newcommand{\bY}{\bm{Y}}
+\newcommand{\bQ}{\bm{Q}}
+\newcommand{\bhQ}{\hat{\bm{Q}}}
+\newcommand{\hQ}{\hat{Q}}
+\newcommand{\aeq}{\overset{\star}{=}}
+\newcommand{\bQrs}{\bQ^{\mathrm{RS}}}
+\newcommand{\vx}{\bm{x}}
+\newcommand{\bX}{\bm{X}}
+\renewcommand{\Pr}[2][]{\mathsf{P}_{#1} #2 }
+\newcommand{\argmin}{\operatorname{arg}\operatorname{min}}
+\newcommand{\crit}{\operatorname{Crit}}
+
+% Convex Geometry
+\DeclareMathOperator{\vol}{Vol}
+\newcommand{\Vol}[2][]{\vol_{#1} \left(#2\right)}
+\DeclareMathOperator{\Cov}{Cov}
+\newcommand{\cov}[1]{\Cov\left(#1\right)}
+\DeclareMathOperator{\Bary}{b}
+\newcommand{\ba}[1]{\Bary\left(#1\right)}
+\newcommand{\mink}[1][\mu]{{#1}^{+}}
+\newcommand{\define}[1]{\textcolor{blue}{#1}}
+\newcommand{\empha}[1]{\textcolor{red}{#1}}
+
